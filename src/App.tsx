@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Webcam from "react-webcam";
+
+const videoConstraints = {
+  width: window.innerWidth,
+  height: window.innerHeight,
+};
+
+const WebcamComponent = () => (
+  <Webcam videoConstraints={videoConstraints} style={{ width: "100%" }} />
+);
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div id="video_stream">
+        <div style={{ width: "100%", margin: "auto" }}>
+          <WebcamComponent />
+        </div>
+      </div>
     </div>
   );
 }
